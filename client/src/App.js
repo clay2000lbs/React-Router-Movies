@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import axios from 'axios';
-
+import MovieList from './Movies/MovieList';
 import SavedList from './Movies/SavedList';
 
 const App = () => {
@@ -30,8 +30,12 @@ const App = () => {
     <div>
       <SavedList list={savedList} />
       <div>
-        <Route exact path='/' component={movieList} />
-        <Route path='/movies/' component={movie} />
+        <Route exact path='/' >
+          
+        </Route>
+        <Route path='/movies/:id' render={props =>{
+          const { id } = props.match.params;
+        }} />
         </div>
     </div>
   );
