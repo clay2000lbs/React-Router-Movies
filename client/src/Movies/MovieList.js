@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link, Route } from 'react-router-dom';
+
 
 const MovieList = props => {
   return (
@@ -15,6 +17,8 @@ function MovieDetails({ movie }) {
   return (
     <div className="movie-card">
       <h2>{title}</h2>
+      <Link to={'/movieCard/${movie.id}'}></Link>
+      <Route></Route>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
